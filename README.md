@@ -7,7 +7,7 @@ These dotfiles are built inspired by the huge GitHub project [ML4FW Dotfiles](ht
 ```ssh
 # Clone the repository
 git clone https://github.com/DanieleBertagnoli/ArchHyprlandDotfiles ArchHyprlandDotfiles
-cd ArchHyrplandDotfiles/
+cd ArchHyrplandDotfiles/ArchHyrpland/
 
 # Run the script
 ./install.sh
