@@ -39,13 +39,8 @@ wallpaper=$1
 wal -q -i $wallpaper
 source $HOME/.cache/wal/colors.sh
 
-# Restart hyprpaper
-killall -e hyprpaper & 
-sleep 1; 
-
-
 tpl="$HOME/.config/hypr/hyprpaper.tpl"
-conf="$HOME/.config/hypr/hyprpaper.conf"
+conf="$HOME/.config/hypr/hyprpaper.lua"
 
 # Extract monitor names from hyprctl
 monitors=$(hyprctl monitors | awk '/Monitor/ {print $2}')
@@ -72,7 +67,6 @@ output+="$splash_line"$'\n'
 
 # Write final config
 echo "$output" > "$conf"
-hyprpaper & > /dev/null 2>&1
 
 # Reload ags
 killall ags

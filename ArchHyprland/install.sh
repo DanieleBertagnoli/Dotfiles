@@ -279,10 +279,10 @@ echo -e "\n\nAre you using an NVIDIA GPU?"
 answer=$(gum choose "Yes" "No")
 echo -e "\n\nSetting environment variables"
 if [ "$answer" == "Yes" ]; then
-    cat ~/.config/hypr/configs/environments/nvidia.conf > ~/.config/hypr/configs/environment_vars.conf 
+    cat ~/.config/hypr/configs/environments/nvidia.lua > ~/.config/hypr/configs/environment_vars.lua 
     sudo pacman -Sy --noconfirm libva-nvidia-driver
 else
-    cat ~/.config/hypr/configs/environments/default.conf > ~/.config/hypr/configs/environment_vars.conf
+    cat ~/.config/hypr/configs/environments/default.lua > ~/.config/hypr/configs/environment_vars.lua
 fi
 
 echo -e "\n\nPress [ENTER] to continue..."
@@ -325,10 +325,10 @@ echo -e "\n\nAre you using a laptop?"
 answer=$(gum choose "Yes" "No")
 if [ "$answer" == "Yes" ]; then
     echo -e "\n\nUsing laptop configuration"
-    cat ~/.config/hypr/configs/keyboards/laptop.conf > ~/.config/hypr/configs/keyboard.conf
+    cat ~/.config/hypr/configs/keyboards/laptop.lua > ~/.config/hypr/configs/keyboard.lua
 else
     echo -e "\n\nUsing desktop configuration"
-    cat ~/.config/hypr/configs/keyboards/desktop.conf > ~/.config/hypr/configs/keyboard.conf
+    cat ~/.config/hypr/configs/keyboards/desktop.lua > ~/.config/hypr/configs/keyboard.lua
 fi
 
 echo -e "\n\nPress [ENTER] to continue..."
@@ -359,8 +359,8 @@ if gum confirm "Do you want to specify the keyboard variant? (Leave empty for de
 fi
 
 # Replace the placeholders LAYOUT and VARIANT using sed
-sed -i "s/LAYOUT/$kb_layout/" ~/.config/hypr/configs/keyboard.conf
-sed -i "s/VARIANT/$kb_variant/" ~/.config/hypr/configs/keyboard.conf
+sed -i "s/LAYOUT/$kb_layout/" ~/.config/hypr/configs/keyboard.lua
+sed -i "s/VARIANT/$kb_variant/" ~/.config/hypr/configs/keyboard.lua
 
 echo -e "\n\nPress [ENTER] to continue..."
 read

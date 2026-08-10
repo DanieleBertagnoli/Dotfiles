@@ -1,7 +1,7 @@
-wallpaper {
-    monitor = MONITOR
-    path = WALLPAPER
-    fit_mode = cover
-}
-
-splash = false
+hl.config({
+    wallpaper = {
+        path = "WALLPAPER",
+        fit_mode = "cover",
+        monitor = "MONITOR",
+    },
+})
